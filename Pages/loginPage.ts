@@ -61,7 +61,7 @@ export class LoginPage {
         await this.countryDropdown.click();
         await this.countryDropdownSelector.locator(`//ul//strong[text()="${country}"]`).click()
         await this.phoneInput.clear();
-        await this.phoneInput.fill(phoneNumber, {timeout: 5000});
+        await this.phoneInput.fill(phoneNumber);
     }
 
     async selectbirthDate(birthDate: string) {
