@@ -1,0 +1,95 @@
+<testsuites id="" name="" tests="13" failures="0" skipped="0" errors="0" time="45.278302000000004">
+<testsuite name="registration.spec.ts" timestamp="2025-05-22T21:17:17.281Z" hostname="chromium" tests="13" failures="0" skipped="0" time="178.058" errors="0">
+<testcase name="Registration - Happy path: Successful registration with valid data" classname="registration.spec.ts" time="13.658">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-Registration--4a981-egistration-with-valid-data-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration Test - Validation messages for all required fields" classname="registration.spec.ts" time="11.404">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-Registration--141ed-ges-for-all-required-fields-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration test - missing user name" classname="registration.spec.ts" time="15.467">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-Registration-test---missing-user-name-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration test - missing lastName" classname="registration.spec.ts" time="15.455">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-Registration-test---missing-lastName-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration test - missing email" classname="registration.spec.ts" time="18.938">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-Registration-test---missing-email-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration test - missing password" classname="registration.spec.ts" time="16.684">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-Registration-test---missing-password-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration test - missing repeatPassword" classname="registration.spec.ts" time="15.061">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-Registration-test---missing-repeatPassword-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration test - missing birthDate" classname="registration.spec.ts" time="11.883">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-Registration-test---missing-birthDate-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration test - missing acceptTerms checkbox" classname="registration.spec.ts" time="7.316">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-Registration--bde4d-issing-acceptTerms-checkbox-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration test - incorrect email " classname="registration.spec.ts" time="19.258">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-Registration-test---incorrect-email--chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration test - incorrect password " classname="registration.spec.ts" time="15.687">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-Registration-test---incorrect-password--chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration test - incorrect repeat password " classname="registration.spec.ts" time="4.224">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-Registration-test---incorrect-repeat-password--chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Registration test - incorrect phone number " classname="registration.spec.ts" time="13.023">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-Registration-test---incorrect-phone-number--chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
