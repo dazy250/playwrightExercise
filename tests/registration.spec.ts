@@ -47,7 +47,7 @@ test('Registration Test - Validation messages for all required fields', async ({
     }
   });
 });
-/////
+
 test('Registration test - missing user name', async ({ loginPageFixture }) => {
   const updatedUserData: RegistrationData = {
     ...validUserData,
@@ -181,7 +181,7 @@ test('Registration test - missing acceptTerms checkbox', async ({ loginPageFixtu
   });
 });
 
-test('Registration test - incorrect email ', async ({ loginPageFixture }) => {
+test('Registration test - incorrect email', async ({ loginPageFixture }) => {
 
   const incorrectEmails: string[] = ["userexample.com", "user@@example.com", "user@", "@example.com", "user @example.com", "user<>@mail.com", "user@example", "user.@example.com", ".user@example.com", "user..name@example.com"];
 
@@ -203,7 +203,7 @@ test('Registration test - incorrect email ', async ({ loginPageFixture }) => {
   }
 });
 
-test('Registration test - incorrect password ', async ({ loginPageFixture }) => {
+test('Registration test - incorrect password', async ({ loginPageFixture }) => {
 
   const incorrectPassword: { password: string, message: string }[] = [
     { password: 'Ab1!', message: IncorrectPasswordMessage.TooShort },
@@ -231,7 +231,7 @@ test('Registration test - incorrect password ', async ({ loginPageFixture }) => 
   }
 });
 
-test('Registration test - incorrect repeat password ', async ({ loginPageFixture }) => {
+test('Registration test - incorrect repeat password', async ({ loginPageFixture }) => {
 
   await test.step(`WHEN: The user fills out incorrect repeat password`, async () => {
     await loginPageFixture.fillForm({

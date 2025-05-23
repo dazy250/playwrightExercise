@@ -1,0 +1,41 @@
+1) Registration - Happy path: Successful registration with valid data
+- weryfikacja rejestracji - wszytskie pola zostaja uzupełnione
+- weryfikacja ekranu potwierdzajacego udana rejestracje
+
+2) Registration Test - Validation messages for all required fields
+- weryfikacja czy wszytskie komunikaty walidacji pojawiaja dla pustego formularza 
+
+3) Registration test - missing user name
+- weryfikacja czy brak pola user name jest w stanie zatrzymac rejestracje 
+
+4) Registration test - missing lastName
+- weryfikacja czy brak pola lastName jest w stanie zatrzymac rejestracje 
+
+5) Registration test - missing email
+- weryfikacja czy brak pola email jest w stanie zatrzymac rejestracje 
+
+6) Registration test - missing password
+- weryfikacja czy brak pola password jest w stanie zatrzymac rejestracje 
+
+7) Registration test - missing repeatPassword
+- weryfikacja czy brak pola repeatPassword jest w stanie zatrzymac rejestracje 
+
+8) Registration test - missing birthDate
+- weryfikacja czy brak pola birthDate jest w stanie zatrzymac rejestracje
+
+9) Registration test - missing acceptTerms checkbox
+- weryfikacja czy brak wybranej opcji acceptTerms jest w stanie zatrzymac rejestracje
+
+10) Registration test - incorrect email
+- weryfikacja komunikatów walidacji dla pola email
+
+11) Registration test - incorrect password
+- weryfikacja komunikatów walidacji dla pola password
+
+12) Registration test - incorrect repeat password
+- weryfikacja komunikatów walidacji dla pola repeat password
+
+13) Registration test - incorrect phone number
+- weryfikacja komunikatów walidacji dla pola phone number
+
+
