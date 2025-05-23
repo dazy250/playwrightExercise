@@ -45,6 +45,7 @@ test('Registration Test - Validation messages for all required fields', async ({
     for (const message of messages) {
       await loginPageFixture.assertValidationMessageIsVisible(message, true);
     }
+    await loginPageFixture.assertErrorMessagesCount(7);
   });
 });
 
@@ -64,6 +65,7 @@ test('Registration test - missing user name', async ({ loginPageFixture }) => {
 
   await test.step(`THEN: The error message is visible for the name field`, async () => {
     await loginPageFixture.assertValidationMessageIsVisible(ValidationMessagesRequiredFields.NameRequired, true);
+    await loginPageFixture.assertErrorMessagesCount(1);
   });
 });
 
@@ -83,6 +85,7 @@ test('Registration test - missing lastName', async ({ loginPageFixture }) => {
 
   await test.step(`THEN: The error message is visible for the lastName field`, async () => {
     await loginPageFixture.assertValidationMessageIsVisible(ValidationMessagesRequiredFields.LastNameRequired, true);
+    await loginPageFixture.assertErrorMessagesCount(1);
   });
 });
 
@@ -102,6 +105,7 @@ test('Registration test - missing email', async ({ loginPageFixture }) => {
 
   await test.step(`THEN: The error message is visible for the email field`, async () => {
     await loginPageFixture.assertValidationMessageIsVisible(ValidationMessagesRequiredFields.EmailRequired, true);
+    await loginPageFixture.assertErrorMessagesCount(1);
   });
 });
 
@@ -121,6 +125,8 @@ test('Registration test - missing password', async ({ loginPageFixture }) => {
 
   await test.step(`THEN: The error message is visible for the password field`, async () => {
     await loginPageFixture.assertValidationMessageIsVisible(ValidationMessagesRequiredFields.PasswordRequired, true);
+    await loginPageFixture.assertValidationMessageIsVisible(IncorrectRepeatPasswordMessage.IncorrectRepeatPassword, true);
+    await loginPageFixture.assertErrorMessagesCount(2);
   });
 });
 
@@ -140,6 +146,7 @@ test('Registration test - missing repeatPassword', async ({ loginPageFixture }) 
 
   await test.step(`THEN: The error message is visible for the repeatPassword field`, async () => {
     await loginPageFixture.assertValidationMessageIsVisible(ValidationMessagesRequiredFields.RepeatPasswordRequired, true);
+    await loginPageFixture.assertErrorMessagesCount(1);
   });
 });
 
@@ -159,6 +166,7 @@ test('Registration test - missing birthDate', async ({ loginPageFixture }) => {
 
   await test.step(`THEN: The error message is visible for the birthDate field`, async () => {
     await loginPageFixture.assertValidationMessageIsVisible(ValidationMessagesRequiredFields.BirthDateRequired, true);
+    await loginPageFixture.assertErrorMessagesCount(1);
   });
 });
 
@@ -178,6 +186,7 @@ test('Registration test - missing acceptTerms checkbox', async ({ loginPageFixtu
 
   await test.step(`THEN: The error message is visible for the acceptTerms field`, async () => {
     await loginPageFixture.assertValidationMessageIsVisible(ValidationMessagesRequiredFields.AcceptTermsRequired, true);
+    await loginPageFixture.assertErrorMessagesCount(1);
   });
 });
 
@@ -199,6 +208,7 @@ test('Registration test - incorrect email', async ({ loginPageFixture }) => {
 
     await test.step(`THEN: The validation message is visible: ${IncorrectEmailMessage.IncorrectEmail}`, async () => {
       await loginPageFixture.assertValidationMessageIsVisible(IncorrectEmailMessage.IncorrectEmail, true);
+      await loginPageFixture.assertErrorMessagesCount(1);
     })
   }
 });
@@ -227,6 +237,8 @@ test('Registration test - incorrect password', async ({ loginPageFixture }) => {
 
     await test.step(`THEN: The validation message is visible: ${value.message}`, async () => {
       await loginPageFixture.assertValidationMessageIsVisible(value.message, true);
+      await loginPageFixture.assertValidationMessageIsVisible(IncorrectRepeatPasswordMessage.IncorrectRepeatPassword, true);
+      await loginPageFixture.assertErrorMessagesCount(2);
     })
   }
 });
@@ -235,6 +247,7 @@ test('Registration test - incorrect repeat password', async ({ loginPageFixture 
 
   await test.step(`WHEN: The user fills out incorrect repeat password`, async () => {
     await loginPageFixture.fillForm({
+      ...validUserData,
       password: 'BezpieczneHaslo123!',
       repeatPassword: 'BezpieczneHaslo123!New',
     });
@@ -246,6 +259,7 @@ test('Registration test - incorrect repeat password', async ({ loginPageFixture 
 
   await test.step(`THEN: The validation message is visible: ${IncorrectRepeatPasswordMessage.IncorrectRepeatPassword}`, async () => {
     await loginPageFixture.assertValidationMessageIsVisible(IncorrectRepeatPasswordMessage.IncorrectRepeatPassword, true);
+    await loginPageFixture.assertErrorMessagesCount(1);
   })
 });
 
@@ -271,6 +285,7 @@ test('Registration test - incorrect phone number ', async ({ loginPageFixture })
       
     await test.step(`THEN: The validation message is visible: ${value.message}`, async () => {
       await loginPageFixture.assertValidationMessageIsVisible(value.message, true);
+      await loginPageFixture.assertErrorMessagesCount(1);
     })
   }
 });

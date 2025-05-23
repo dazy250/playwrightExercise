@@ -14,7 +14,8 @@ export class LoginPage {
     private readonly infoConsentCheckbox: Locator;
     private readonly submitButton: Locator;
     private readonly countryDropdown: Locator;
-    private countryDropdownSelector: Locator;
+    private readonly countryDropdownSelector: Locator;
+    private readonly errorsList: Locator;
 
     constructor(public readonly page: Page) {
         this.nameInput = page.locator('input[placeholder="Imię"]');
@@ -30,6 +31,7 @@ export class LoginPage {
         this.submitButton = page.getByRole('button', { name: /zarejestruj/i });
         this.countryDropdown = this.page.locator("//div[@class='vti__dropdown']");
         this.countryDropdownSelector = this.page.locator("//div[@class='vti__dropdown open']");
+        this.errorsList = this.page.locator("//span[@class='errors'][string-length(normalize-space()) > 0]");
     }
 
     async navigateTo() {
@@ -79,5 +81,9 @@ export class LoginPage {
     // ASSERTS
     async assertValidationMessageIsVisible(validationMessage: string, isVisible: boolean = true) {
         await expect(this.page.locator(`text=${validationMessage}`)).toBeVisible({ visible: isVisible, timeout: 3_000 });
+    }
+
+    async assertErrorMessagesCount(expectedErrorMessageCount: number) {
+        await expect(this.errorsList).toHaveCount(expectedErrorMessageCount);
     }
 }
